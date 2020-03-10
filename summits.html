@@ -96,27 +96,17 @@ padding-bottom:4px;
 background-color:#355221;
 color:#ffffff;
 }
-	.headerSortDown:after,
-.headerSortUp:after {
-  content: ' ';
-  position: relative;
-  left: 2px;
-  border: 8px solid transparent;
+thead th {
+    background-repeat: no-repeat;
+    background-position: right center;
 }
-
-.headerSortDown:after {
-  top: 10px;
-  border-top-color: silver;
+thead th.up {
+    padding-right: 20px;
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
 }
-
-.headerSortUp:after {
-  bottom: 15px;
-  border-bottom-color: silver;
-}
-
-.headerSortDown,
-.headerSortUp {
-  padding-right: 10px;
+thead th.down {
+    padding-right: 20px;
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
 }
 	
 #summits tr.alt td
@@ -180,7 +170,14 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 		</script>
-
+<script>
+	$(function () {
+    $('table').tablesorter({
+        cssAsc: 'up',
+        cssDesc: 'down'
+    });
+});
+	</script>
 <p><input id="myInput" onkeyup="myFunction()" placeholder="Search by summit name..." type="text" /></p>
 <table id="summits" class="tablesorter">
 	<thead>
