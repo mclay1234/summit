@@ -59,6 +59,13 @@ $(function() {
   background-color:rgba(0,0,0,0.6);
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
+			label::after {
+    content: '+';
+}
+			
+input:checked + label::after {
+    content: '-';
+}
 		</style>
 
 <style type="text/css">#myInput {
