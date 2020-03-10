@@ -35,6 +35,50 @@ $(function() {
 </script>
 
 
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+
 <style type="text/css">#myInput {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
   background-position: 10px 12px; /* Position the search icon */
@@ -99,6 +143,21 @@ a:active {
 
 	</head>
 	<body>
+<button type="button" class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p> 
+
+There are three types of summits:
+1.	Official:  The government named them and they appear on official maps.  Relatively few peaks are officially named and official status is not correlated with the greatness of the mountain, or even whether the bump of land with the name is an actual summit.  Syncline Mountain and Pinetop Hill are great examples.  
+2.	Unofficial, but in published books:  The author has climbed an unnamed peak, usually one that already has an unofficial but common name, and published the route and name in a guidebook.  The peak then seems official in some capacity.  Smutwood Peak is a good example.  
+3.	Unofficial, but on websites:  Someone who has a website has climbed a peak and given it name.  Others follow and the name spreads and appears on random mapping websites (if worthy, the peak may end up in a published guidebook).  These ones are usually absurd, yet spread like wildfire in the age of the internet.  Ben's Hill is a good example.  Someone named Ben placed a geocache on the side of Prairie Mountain in 2007 and now this point halfway up the mountain is considered a summit by the internet.  I do it too because, heck, why not?  
+
+All this does of course mean my summit list is absurdly arbitrary, so take the summit count with a significant grain of salt.  I've avoided counting many that seem to have official internet status, and I haven't held back in making up my own summits when I felt like it.  I suppose my simple definition of a summit is that if I purposely set out to reach a high point and reached it, then it's a summit, but I doubt I strictly follow that rule.  I'm just out there to enjoy life, I don't hike up peaks because the government, books, or websites tell me to, and my summit list and other stats serve only to justify silly celebrations like gondola rides or cupcakes.  
+
+</p>
+</div>
+
+
 <p><input id="myInput" onkeyup="myFunction()" placeholder="Search by summit name..." type="text" /></p>
 <table id="summits" class="tablesorter">
 	<thead>
