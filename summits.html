@@ -58,8 +58,16 @@ $(function() {
   font-size: 16px;
   background-color:rgba(0,0,0,0.6);
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-
 }
+input + label + .content {
+    display: none;
+}
+
+input:checked + label + .content {
+    display: block;
+}
+
+
 		</style>
 
 <style type="text/css">#myInput {
