@@ -35,22 +35,7 @@ $(function() {
 </script>
 
 
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-		</script>
 
 		<style>
 /* Style the button that is used to open and close the collapsible content */
@@ -157,7 +142,22 @@ All this does of course mean my summit list is absurdly arbitrary, so take the s
 
 </p>
 </div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+		</script>
 
 <p><input id="myInput" onkeyup="myFunction()" placeholder="Search by summit name..." type="text" /></p>
 <table id="summits" class="tablesorter">
